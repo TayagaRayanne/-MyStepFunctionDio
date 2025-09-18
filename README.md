@@ -22,14 +22,12 @@ O fluxo de trabalho foi projetado para simular uma lógica de decisão simples, 
 
 Você pode iniciar uma execução da máquina de estado no console da AWS e fornecer uma das seguintes entradas no formato JSON:
 
-**Para um resultado de sucesso:**
+**Para um resultado de sucesso e falha:**
 ```json
 {
   "data": true
 }
 
-**Para um resultado de falha:**
-```json
 {
   "data": false
 }
