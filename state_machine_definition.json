@@ -1,0 +1,38 @@
+{
+  "Comment": "A description of my state machine",
+  "StartAt": "Pass",
+  "States": {
+    "Pass": {
+      "Type": "Pass",
+      "Result": {
+        "data": true
+      },
+      "Next": "Choice"
+    },
+    "Choice": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.data",
+          "BooleanEquals": true,
+          "Next": "Success"
+        },
+        {
+          "Variable": "$.data",
+          "BooleanEquals": false,
+          "Next": "Failure"
+        }
+      ],
+      "Default": "Failure"
+    },
+    "Success": {
+      "Type": "Pass",
+      "End": true
+    },
+    "Failure": {
+      "Type": "Pass",
+      "End": true
+    }
+  },
+  "QueryLanguage": "JSONPath"
+}
